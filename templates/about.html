@@ -1,8 +1,8 @@
 <!DOCTYPE html data-theme="light">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" data-bs-theme="light">
   <head>
-    <link rel="icon" href="../imgs/faviconnobg.ico" />
-    <link rel="stylesheet" href="../style.css" media="all" />
+    <link rel="icon" href="{{ url_for('static', filename='images/faviconnobg.ico') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" media="all" />
     <meta charset="utf-8" />
     <title>About Lostitems</title>
     <script>
@@ -14,7 +14,7 @@
   </head>
 
   <body>
-    <img src="../imgs/backbutton.png" class="back" onclick="history.back()" />
+    <img src="{{ url_for('static', filename='images/backbutton.png') }}" class="back" onclick="history.back()" />
     <br />
     <br />
     <br />

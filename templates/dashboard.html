@@ -13,7 +13,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <link rel="icon" href="../imgs/faviconnobg.ico" />
+    <link rel="icon" href="{{ url_for('static', filename='images/faviconnobg.ico') }}" />
     <meta charset="utf-8" />
     <title>Dashboard</title>
     <script>
@@ -38,7 +38,7 @@
         }
       });
     </script>
-    <link rel="stylesheet" type="text/css" href="../style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" media="all" />
   </head>
 
   <body onload="checkCookie()">
@@ -59,13 +59,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="../about/">About</a>
+              <a class="nav-link" href="/about/">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../catalogue/">Catalogue</a>
+              <a class="nav-link" href="/catalogue/">Catalogue</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="../dashboard/">Dashboard</a>
+              <a class="nav-link active" href="/dashboard/">Dashboard</a>
           </ul>
         </div>
         <button id="theme-toggle-button" class="btn btn-primary">
@@ -117,7 +117,7 @@
       checkCookie();
     </script>
 
-    <script src="cookies.js"></script>
+    <script src="{{ url_for('static', filename='cookies.js') }}"></script>
     <script>
       function checkCookie() {
         let num = getCookie("akshaj-bookcount");

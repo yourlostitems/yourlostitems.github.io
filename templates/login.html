@@ -2,10 +2,10 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" data-bs-theme="light">
   <head>
-    <link rel="icon" href="../imgs/faviconnobg.ico" />
+    <link rel="icon" href="{{ url_for('static', filename='images/faviconnobg.ico') }}" />
     <meta charset="utf-8" />
     <title>Log in</title>
-    <link rel="stylesheet" href="../style.css" media="all" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" media="all" />
     <script>
       var storedTheme = localStorage.getItem("theme");
       if (storedTheme) {
@@ -18,7 +18,7 @@
     <a href="../" class="namey" id="left"><em>Lostitems</em></a>
     <h1 id="abouty"><em>Log in:</em></h1>
 
-    <form name="Form" action="../catalogue/">
+    <form name="Form" action="/catalogue/">
       <input
         type="text"
         placeholder="School username"

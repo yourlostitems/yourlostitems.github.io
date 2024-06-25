@@ -1,13 +1,13 @@
 # Lost Items!
 
-Welcome to the Lost Items project. This is a website that allows users to check their lost items online. If a user finds an item that they have lost, they can press the claim button to request the aforementioned item. This request will be sent to the administrators of the site for processing (all wip).
+Welcome to the Lost Items project. This is a website that allows users to check their lost items online. If a user finds an item that they have lost, they can press the claim button to request the aforementioned item. This request will be sent to the administrators of the site for processing[^1].
 
 ## Features
 
 - **Item Catalogue**: Users can browse through the lost items in our [catalogue](catalogue/index.html).
 - **Claim Requests**: Users can press a claim button to request a lost item. This request is sent to the site administrators for approval (wip).
-- **A Dashboard**: You can see information through the [dashboard](dashboard/index.html) (the dashboard is functional but all functional information is wip).
-- **User Login**: Users need to [login](login/index.html) to be able to claim items (wip).
+- **A Dashboard**: You can see information through the [dashboard](dashboard/index.html)[^2].
+- **User Login**: Users need to [login](login/index.html) to be able to claim items[^1].
 
 ## Installation
 
@@ -22,11 +22,11 @@ To install and run this project locally, follow these four steps:
 
 To use the Lost Items Finder website, follow these steps:
 
-1. Open your web browser and navigate to the [website URL](https://yourlostitems.github.io/).
-2. Browse through the lost items in the catalog.
-3. If you find an item you've lost, press the claim button to request it (wip).
-4. Login to your account to be able to claim items (wip).
-5. Administrators can approve or reject your item request(s) through the dashboard (wip).
+1. Open your favoured web browser and navigate to the [website URL](https://yourlostitems.github.io/).
+2. Browse through the various lost items in the catalog.
+3. Login to your account to be able to claim items[^1].
+4. If you find an item that you have lost, press the claim button to request it and we will try to respond to your request as soon as possible[^1].
+5. Administrators can approve or reject your item request(s) through the dashboard[^1].
 
 ## Technologies Used
 
@@ -57,3 +57,24 @@ We welcome contributions from the community. If you would like to contribute to 
 ## Code of Conduct
 
 We expect all contributors and users of this project to adhere to our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Please read it to get a full understanding of our amazing community's standards and practices.
+
+## Our workflow
+
+```mermaid
+graph TD
+A[Suffering];
+B[Completion];
+C[Tutorial hell];
+D[Procrastination];
+E[Hard work];
+F[Repeat];
+A-->C;
+C-->D;
+D-->E;
+E-->F;
+F-->A;
+F-->B;
+```
+
+[^1]: This is currently work in progess.
+[^2]: The dashboard is functional but all functional information is work in progress

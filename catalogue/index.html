@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html data-bs-theme="light">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+<link rel="icon" href="../imgs/faviconnobg.ico">
+<meta charset="utf-8" />
+<title>Catalogue</title>
+<script>
+    function toggleTheme() {
+        var currentTheme = document.documentElement.getAttribute('data-bs-theme');
+        var switchToTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+        document.documentElement.setAttribute('data-bs-theme', switchToTheme);
+        localStorage.setItem('theme', switchToTheme);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('theme-toggle-button').addEventListener('click', toggleTheme);
+
+        // Retrieve the theme from local storage
+        var storedTheme = localStorage.getItem('theme');
+        if (storedTheme) {
+            document.documentElement.setAttribute('data-bs-theme', storedTheme);
+        }
+    });
+</script>
+<link rel="stylesheet" type="text/css" href="../style.css" media="all" />
+</head>
+
+<body onload="checkCookie()" >
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+        <a class="btn btn-primary" href="../">Sign out</a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../about/">About</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link active" href="../catalogue/">Catalogue</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../dashboard/">Dashboard</a>
+                </li>
+            </ul>
+        </div>
+        <button id="theme-toggle-button" class="btn btn-primary me-2">Toggle Theme</button>
+    </nav>
+
+
+    <h1 id="abouty"><b><em>Catalogue</em></b></h1>
+    <h2 id="itemsub" class="subhead">Search through and see if your lost item is on it!</h2>
+    <input id="search" placeholder="Search for an item..." onkeyup="searchbar()" />
+    <p> </p>
+    <div id="catadiv">
+        <table id="myTable">
+            <tr>
+                <th>Item name</th>
+                <th>Category</th>
+            </tr>
+            <tr class="cell cell1" id="Lord of the Rings" onClick="GFG_click(this.id,this)">
+                <td>Lord of the Rings</td>
+                <td>Book</td>
+            </tr>
+            <tr class="cell cell1" id="Size 7 leather shoes" onClick="GFG_click(this.id,this)">
+                <td>Size 7 leather shoes</td>
+                <td>Shoes</td>
+            </tr>
+            <tr class="cell cell1" id="Grey pencil case" onClick="GFG_click(this.id,this)">
+                <td>Grey pencil case</td>
+                <td>Stationery</td>
+            </tr>
+            <tr class="cell cell1" id=" Rugby Jersey" onClick="GFG_click(this.id,this)">
+                <td> Rugby Jersey</td>
+                <td>Sports clothing</td>
+            </tr>
+            <tr class="cell cell1" id="White long-sleeved shirt" onClick="GFG_click(this.id,this)">
+                <td>White long-sleeved shirt</td>
+                <td>School clothing</td>
+            </tr>
+            <tr class="cell cell1" id="Cricket pad" onClick="GFG_click(this.id,this)">
+                <td>Cricket pad</td>
+                <td>Sports kits</td>
+            </tr>
+            <tr class="cell cell1" id="Science goggles" onClick="GFG_click(this.id,this)">
+                <td>Science goggles</td>
+                <td>Lesson equipment</td>
+            </tr>
+        </table>
+        <p id="GFG_UP">
+        </p>
+        <p id="GFG_DOWN">
+        </p>
+    </div>
+    <table id="items">
+        <tr>
+            <th>Items claimed</th>
+        </tr>
+    </table>
+    <script>
+
+        var el_up = document.getElementById("GFG_UP");
+        var el_down = document.getElementById("GFG_DOWN");
+        var claimed = 0;
+
+        function GFG_click(clicked,delid) {
+            var x = document.getElementById(clicked)
+            var table = document.getElementById("myTable");
+            table1 = document.getElementById('items');
+            table.deleteRow(delid.rowIndex);
+            var row = table1.insertRow(1);
+            var cell1 = row.insertCell(0);
+            cell1.innerHTML = clicked;
+            claimed = claimed + 1;
+            // alert("hello " + claimed);
+            setCookie('akshaj-bookcount', claimed, 1);
+        }
+
+
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+
+        }
+        function checkCookie() {
+            let num = getCookie("akshaj-bookcount");
+            if (num == "" || isNaN(num)) {
+                num = 1;
+            } else {
+                num = parseInt(num);
+            }
+            setCookie("akshaj-bookcount", num, 1);
+            document.getElementById('itcl').innerHTML = num;
+        }
+
+        function searchbar() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script src="cookies.js"></script>
+<script>
+    function checkCookie() {
+        let num = getCookie("akshaj-bookcount");
+        if (num == "" || isNaN(num)) {
+            num = 1;
+        } else {
+            num = parseInt(num);
+        }
+        setCookie("akshaj-bookcount", num, 1);
+        document.getElementById('itcl').innerHTML = num;
+    }
+
+    checkCookie();
+</script>
+    <!-- Google SEO -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZJP7Q7KD0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());gtag('config', 'G-XZJP7Q7KD0');
+    </script>
+</body>
+
+</html>

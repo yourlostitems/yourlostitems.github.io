@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-The only version that is supported will and always will be the newest version at the time.
+The only version that is supported will and always will be the newest version at the time (we are currently not using versioning).
 
 <!---| Version | Supported          |
 | ------- | ------------------ |
@@ -14,4 +14,4 @@ The only version that is supported will and always will be the newest version at
 
 ## Reporting a Vulnerability
 
-To report a vulnerability please create an issue, if you believe you have solved the issue, please create a pull request with the required code and any additional information to fix the issue. We value the amazing help from our community and hope to continue to foster this amazing environment.
+To report a vulnerability please create an issue, if you believe you have solved the issue, please create a pull request with the required code and any additional information to fix the issue. We value the amazing help from our community and hope to continue to foster this amazing and safe environment for all voices to be heard.

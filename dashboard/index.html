@@ -16,28 +16,7 @@
     <link rel="icon" href="../imgs/faviconnobg.ico" />
     <meta charset="utf-8" />
     <title>Dashboard</title>
-    <script>
-      function toggleTheme() {
-        var currentTheme =
-          document.documentElement.getAttribute("data-bs-theme");
-        var switchToTheme = currentTheme === "dark" ? "light" : "dark";
-
-        document.documentElement.setAttribute("data-bs-theme", switchToTheme);
-        localStorage.setItem("theme", switchToTheme);
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        document
-          .getElementById("theme-toggle-button")
-          .addEventListener("click", toggleTheme);
-
-        // Retrieve the theme from local storage
-        var storedTheme = localStorage.getItem("theme");
-        if (storedTheme) {
-          document.documentElement.setAttribute("data-bs-theme", storedTheme);
-        }
-      });
-    </script>
+    <script src="../theme.js"></script>
     <link rel="stylesheet" type="text/css" href="../style.css" media="all" />
   </head>
 
@@ -76,60 +55,6 @@
     <h1 id="abouty"><em>Dashboard</em></h1>
     <h2>You have claimed <span class="numitems" id="itcl"> 0 </span> items</h2>
     <br />
-
-
-    <script>
-      function setCookie(cname, cvalue, exdays) {
-        const d = new Date();
-        d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-        let expires = "expires=" + d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-      }
-
-      function getCookie(cname) {
-        let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(";");
-        for (let i = 0; i < ca.length; i++) {
-          let c = ca[i];
-          while (c.charAt(0) == " ") {
-            c = c.substring(1);
-          }
-          if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-          }
-        }
-      }
-
-      function checkCookie() {
-        let num = getCookie("akshaj-bookcount");
-        if (num == "" || isNaN(num)) {
-          num = 0;
-        } else {
-          num = parseInt(num);
-        }
-        setCookie("akshaj-bookcount", num, 1);
-        document.getElementById("itcl").innerHTML = num;
-      }
-
-      checkCookie();
-    </script>
-
     <script src="cookies.js"></script>
-    <script>
-      function checkCookie() {
-        let num = getCookie("akshaj-bookcount");
-        if (num == "" || isNaN(num)) {
-          num = 0;
-        } else {
-          num = parseInt(num);
-        }
-        setCookie("akshaj-bookcount", num, 1);
-        document.getElementById("itcl").innerHTML = num;
-      }
-
-      checkCookie();
-    </script>
-    
   </body>
 </html>

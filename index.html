@@ -18,12 +18,7 @@
     />
     <link rel="icon" href="imgs/faviconnobg.ico" />
     <link rel="stylesheet" href="style.css" media="all" />
-    <script>
-      var storedTheme = localStorage.getItem("theme");
-      if (storedTheme) {
-        document.documentElement.setAttribute("data-bs-theme", storedTheme);
-      }
-    </script>
+    <script src="./theme.js"></script>
   </head>
 
   <body>
@@ -166,21 +161,6 @@
     ></script>
 
 
-        <script>
-      window.onscroll = function () {
-        myFunction();
-      };
-
-      var navbar = document.getElementById("navbar");
-      var sticky = navbar.offsetTop;
-
-      function myFunction() {
-        if (window.pageYOffset >= sticky) {
-          navbar.classList.add("sticky");
-        } else {
-          navbar.classList.remove("sticky");
-        }
-      }
-    </script>
+        <script src="script.js"></script>
   </body>
 </html>

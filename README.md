@@ -2,6 +2,8 @@
 
 Welcome to the Lost Items project. This is a website that allows users to check their lost items online. If a user finds an item that they have lost, they can press the claim button to request the aforementioned item. This request will be sent to the administrators of the site for processing[^1].
 
+![image](https://github.com/user-attachments/assets/84643b0c-7be5-4bb9-9c16-3dcfadb15c35)
+
 ## Features
 
 - **Item Catalogue**: Users can browse through the lost items in our [catalogue](catalogue/index.html).

@@ -8,25 +8,7 @@
 <link rel="icon" href="../imgs/faviconnobg.ico">
 <meta charset="utf-8" />
 <title>Catalogue</title>
-<script>
-    function toggleTheme() {
-        var currentTheme = document.documentElement.getAttribute('data-bs-theme');
-        var switchToTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-        document.documentElement.setAttribute('data-bs-theme', switchToTheme);
-        localStorage.setItem('theme', switchToTheme);
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('theme-toggle-button').addEventListener('click', toggleTheme);
-
-        // Retrieve the theme from local storage
-        var storedTheme = localStorage.getItem('theme');
-        if (storedTheme) {
-            document.documentElement.setAttribute('data-bs-theme', storedTheme);
-        }
-    });
-</script>
+<script src="../theme.js"></script>
 <link rel="stylesheet" type="text/css" href="../style.css" media="all" />
 </head>
 
@@ -112,93 +94,9 @@
             <th>Items claimed</th>
         </tr>
     </table>
-    <script>
-
-        var el_up = document.getElementById("GFG_UP");
-        var el_down = document.getElementById("GFG_DOWN");
-        var claimed = 0;
-
-        function GFG_click(clicked,delid) {
-            var x = document.getElementById(clicked)
-            var table = document.getElementById("myTable");
-            table1 = document.getElementById('items');
-            table.deleteRow(delid.rowIndex);
-            var row = table1.insertRow(1);
-            var cell1 = row.insertCell(0);
-            cell1.innerHTML = clicked;
-            claimed = claimed + 1;
-            // alert("hello " + claimed);
-            setCookie('akshaj-bookcount', claimed, 1);
-        }
-
-
-        function setCookie(cname, cvalue, exdays) {
-            const d = new Date();
-            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-            let expires = "expires=" + d.toUTCString();
-            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-        }
-        function getCookie(cname) {
-            let name = cname + "=";
-            let decodedCookie = decodeURIComponent(document.cookie);
-            let ca = decodedCookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) == ' ') {
-                    c = c.substring(1);
-                }
-                if (c.indexOf(name) == 0) {
-                    return c.substring(name.length, c.length);
-                }
-            }
-
-        }
-        function checkCookie() {
-            let num = getCookie("akshaj-bookcount");
-            if (num == "" || isNaN(num)) {
-                num = 1;
-            } else {
-                num = parseInt(num);
-            }
-            setCookie("akshaj-bookcount", num, 1);
-            document.getElementById('itcl').innerHTML = num;
-        }
-
-        function searchbar() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("search");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 
     <script src="cookies.js"></script>
-<script>
-    function checkCookie() {
-        let num = getCookie("akshaj-bookcount");
-        if (num == "" || isNaN(num)) {
-            num = 1;
-        } else {
-            num = parseInt(num);
-        }
-        setCookie("akshaj-bookcount", num, 1);
-        document.getElementById('itcl').innerHTML = num;
-    }
-
-    checkCookie();
-</script>
     
 </body>
 

@@ -51,38 +51,17 @@
     <p> </p>
     <div id="catadiv">
         <table id="myTable">
-            <tr>
-                <th>Item name</th>
-                <th>Category</th>
-            </tr>
-            <tr class="cell cell1" id="Lord of the Rings" onClick="GFG_click(this.id,this)">
-                <td>Lord of the Rings</td>
-                <td>Book</td>
-            </tr>
-            <tr class="cell cell1" id="Size 7 leather shoes" onClick="GFG_click(this.id,this)">
-                <td>Size 7 leather shoes</td>
-                <td>Shoes</td>
-            </tr>
-            <tr class="cell cell1" id="Grey pencil case" onClick="GFG_click(this.id,this)">
-                <td>Grey pencil case</td>
-                <td>Stationery</td>
-            </tr>
-            <tr class="cell cell1" id=" Rugby Jersey" onClick="GFG_click(this.id,this)">
-                <td> Rugby Jersey</td>
-                <td>Sports clothing</td>
-            </tr>
-            <tr class="cell cell1" id="White long-sleeved shirt" onClick="GFG_click(this.id,this)">
-                <td>White long-sleeved shirt</td>
-                <td>School clothing</td>
-            </tr>
-            <tr class="cell cell1" id="Cricket pad" onClick="GFG_click(this.id,this)">
-                <td>Cricket pad</td>
-                <td>Sports kits</td>
-            </tr>
-            <tr class="cell cell1" id="Science goggles" onClick="GFG_click(this.id,this)">
-                <td>Science goggles</td>
-                <td>Lesson equipment</td>
-            </tr>
+            <thead> <!-- Added table head for structure -->
+                <tr>
+                    <th>Item Name</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Items will be dynamically inserted here by script.js -->
+            </tbody>
         </table>
         <p id="GFG_UP">
         </p>
@@ -90,13 +69,18 @@
         </p>
     </div>
     <table id="items">
-        <tr>
-            <th>Items claimed</th>
-        </tr>
+        <thead> <!-- Added table head for structure -->
+            <tr>
+                <th>Claimed Item Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Claimed items will be dynamically inserted here -->
+        </tbody>
     </table>
     <script src="script.js"></script>
 
-    <script src="cookies.js"></script>
+    <script src="../cookies.js"></script> <!-- It's usually better to have global scripts like cookies.js loaded from the root or a shared /js folder -->
     
 </body>
 

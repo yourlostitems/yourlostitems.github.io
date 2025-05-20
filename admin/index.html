@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../theme.js"></script>
+</head>
+<body onload="checkCookie()">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><em>Admin Dashboard</em></a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- Add any admin-specific nav links here if needed -->
+                </ul>
+            </div>
+            <button id="theme-toggle-button" class="btn btn-primary me-2">Toggle Theme</button>
+            <a class="btn btn-primary" href="../">Sign out</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 id="abouty"><em>Welcome, Admin!</em></h1>
+        <p>This is the admin dashboard where you can manage lost items and user claims.</p>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h2>Pending Claims</h2>
+                <ul id="pending-claims-list" class="list-group">
+                    <!-- Claims will be dynamically inserted here -->
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h2>Upload New Item</h2>
+                <form id="upload-item-form">
+                    <div class="mb-3">
+                        <label for="itemName" class="form-label">Item Name</label>
+                        <input type="text" class="form-control" id="itemName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="itemDescription" class="form-label">Item Description</label>
+                        <textarea class="form-control" id="itemDescription" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="itemImage" class="form-label">Item Image</label>
+                        <input type="file" class="form-control" id="itemImage" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload Item</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="../cookies.js"></script>
+</body>
+</html>

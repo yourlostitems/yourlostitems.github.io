@@ -1,6 +1,8 @@
 document.getElementById('passwordshow').style.display = "none";
 var user = "21asharma"
 var password = "testuser@21"
+var adminUser = "admin"
+var adminPassword = "adminpassword"
 
 function show() {
     var x = document.getElementById("pd");
@@ -34,7 +36,7 @@ function validate() {
 
         }
         //Is the password wrong?
-        if (y.value != password) {
+        if (y.value != password && y.value != adminPassword) {
             document.getElementById('passwordshow').style.display = "block";
 
             //If everything is right, submit the form (go to catalogue.html)
@@ -42,6 +44,9 @@ function validate() {
         }
         else if (y.value == password && x.value == user) {
             location.replace("https://yourlostitems.github.io/dashboard/");
+        }
+        else if (x.value == adminUser && y.value == adminPassword) {
+            location.replace("https://yourlostitems.github.io/admin/");
         }
 
     }

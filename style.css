@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
 
-/* https://www.realtimecolors.com/?colors=000000-ffffff-90d6f4-7bccef-48c4f9&fonts=Outfit-Raleway */
 :root[data-bs-theme="light"] {
-    --text: #000000;
-    --background: #ffffff;
-    --primary: #90d6f4;
-    --secondary: #7bccef;
-    --accent: #48c4f9;
+    --text: #122d0b;
+  --background: #e0ffe0;
+  --primary: #b7ff00;
+  --secondary: #88b710;
+  --accent: #84a13a;
     --out: "Playpen Sans", cursive;
     --rale: "Playpen Sans", cursive;
     --opacity: #0000000f;
@@ -15,11 +14,11 @@
 }
 
 :root[data-bs-theme="dark"] {
-    --text: #ffffff;
-    --background: #000000;
-    --primary: #0b516f;
-    --secondary: #106184;
-    --accent: #0682b7;
+    --text: #d9f4d2;
+  --background: #001f00;
+  --primary: #b7ff00;
+  --secondary: #c0ef48;
+  --accent: #a8c55e;
     --out: "Playpen Sans", cursive;
     --rale: "Playpen Sans", cursive;
     --opacity: #ffffff29;
